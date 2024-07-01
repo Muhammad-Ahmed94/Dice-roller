@@ -1,0 +1,17 @@
+
+body {
+    text-align: center;
+}
+
+.btn {
+    font-size: 1.5rem;
+    padding: 4rem, 8rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.number {
+    font-size: 2rem;
+    margin-top: 30px;
+}
