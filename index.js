@@ -1,22 +1,21 @@
-const tempInput = document.querySelector("#temp-input");
-const toFahrenheit = document.querySelector("#toFahrenheit");
-const toCelciius = document.querySelector("#toCelciius");
-const btn = document.querySelector(".btn");
-const result = document.querySelector(".result");
-let temp;
+const rollDice = document.querySelector(".rollDice");
 
-btn.addEventListener("click", function() {
-    temp = Number(tempInput.value);
 
-    if(toFahrenheit.checked) {
-        temp = ((temp) * (9 / 5) + 32).toFixed(2);
-        result.textContent = `${temp} *F`;
+
+
+rollDice.addEventListener("click", function() {
+    const diceInput = document.querySelector("#dice-input").value;
+    const diceValue = document.querySelector(".dice-value");
+    const diceImage= document.querySelector(".dice-images");
+
+    const values = [];
+    const images = [];
+    
+    for(let i=0; i<diceInput; i++) {
+        const value = Math.floor(Math.random() * 6) + 1;
+        values.push(value);
+        images.push(`<img src="dice_images/${value}.png" alt="dice${value}-image">`)
     }
-    else if(toCelciius.checked) {
-        temp = ((temp - 32) * (5 / 9)).toFixed(2);
-        result.textContent = `${temp} *C`
-    }
-    else {
-        result.textContent = `please select a unit first`;
-    }
+    diceValue.textContent = values.join(",")
+    diceImage.innerHTML = images
 })

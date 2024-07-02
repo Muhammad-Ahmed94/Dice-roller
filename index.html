@@ -9,20 +9,13 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="main-heading">temperature conversion</h1>
+        <h1 class="dice-heading">dice roller</h1>
+        <label for="dice-input" class="dice-label">select a number</label>
+        <input type="number" name="dice-input" id="dice-input" min="1" value="1"><br><br>
+        <button class="rollDice">roll dice</button><br>
 
-        <form action="#">
-            <input type="number" name="temp-input" id="temp-input" placeholder="Enter a value"><br>
-
-            <input type="radio" name="btn" id="toFahrenheit">
-            <label for="toFahrenheit">celcius -> fahrenheit</label><br>
-
-            <input type="radio" name="btn" id="toCelciius">
-            <label for="toCelciius">fahrenheit -> celcius </label>
-            <br>
-            <button class="btn" type="button">calculate</button>
-        </form>
-        <label class="result"></label>
+        <label class="dice-value"></label><br>
+        <label class="dice-images"></label>
     </div>
 
     <script src="index.js"></script>
