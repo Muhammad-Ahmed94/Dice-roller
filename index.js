@@ -1,20 +1,22 @@
-//number guessing game
+const tempInput = document.querySelector("#temp-input");
+const toFahrenheit = document.querySelector("#toFahrenheit");
+const toCelciius = document.querySelector("#toCelciius");
+const btn = document.querySelector(".btn");
+const result = document.querySelector(".result");
+let temp;
 
-let guess;
-let randomNumber = Math.floor(Math.random() * 20) + 1;
-let attempt = 0;
-do{
-    guess = window.prompt("enter number");
+btn.addEventListener("click", function() {
+    temp = Number(tempInput.value);
 
-    if(guess > randomNumber){
-        window.alert("number too high");
+    if(toFahrenheit.checked) {
+        temp = ((temp) * (9 / 5) + 32).toFixed(2);
+        result.textContent = `${temp} *F`;
     }
-    else if(guess < randomNumber){
-        window.alert("number too low");
+    else if(toCelciius.checked) {
+        temp = ((temp - 32) * (5 / 9)).toFixed(2);
+        result.textContent = `${temp} *C`
     }
-    else{
-        window.alert(`you guessed right. it took ${attempt}`);
+    else {
+        result.textContent = `please select a unit first`;
     }
-    attempt++;
-
-} while(guess != randomNumber);
+})
